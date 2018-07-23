@@ -1,0 +1,46 @@
+page-home,
+.home {
+    background: url("../assets/img/bg.jpg") no-repeat;
+    background-size: cover;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: 0;
+    ion-list {
+        border-radius: 1rem;
+        overflow: hidden;
+        ion-item,
+        .item:first-child,
+        .item:last-child {
+            border: none;
+        }
+        ion-datetime {
+            padding-left: 0;
+        }
+    }
+    .slider-box {
+        height: 16rem;
+    }
+    .slider-count {
+        border-radius: 5px;
+    }
+    .welcome {
+        font-size: 18px;
+        font-display: inherit;
+    }
+    .tabs {
+        height: 150px;
+    }
+    .image {
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+    }
+    .card,
+    .card-md,
+    .card-ios {
+        webkit-box-shadow: none;
+        box-shadow: none;
+    }
+}

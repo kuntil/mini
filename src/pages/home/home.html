@@ -1,0 +1,84 @@
+<!-- -->
+<ion-header>
+    <ion-navbar color="primary">
+        <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>
+            <strong>Mini</strong> Merchant Identity
+        </ion-title>
+        <ion-buttons end>
+            <button ion-button tappable (click)="presentNotifications($event)">
+        <ion-icon name="notifications"></ion-icon>
+      </button>
+            <button ion-button tappable (click)="goToAccount()">
+        <ion-icon name="cog"></ion-icon>
+      </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding class="animated fadeIn common-bg">
+    <ion-grid>
+        <ion-row>
+            <ion-col cols-12>
+                <span class="welcome"><strong>Welcome</strong>,</span><br>
+                <span>Azkayra Filantropi Kurniawan</span><br>
+                <span>No. REK. 7276819289</span><br>
+                <span></span>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-grid>
+        <ion-row>
+            <ion-col cols-6>
+                <ion-item>
+                    <ion-icon color="primary" name="card" item-start></ion-icon>
+                    Total EDC
+                    <ion-badge item-end>1,250</ion-badge>
+                </ion-item>
+            </ion-col>
+            <ion-col cols-6>
+                <ion-item>
+                    <ion-icon color="dark" name="cash" item-start></ion-icon>
+                    Total Transaction
+                    <ion-badge item-end>1,250</ion-badge>
+                </ion-item>
+            </ion-col>
+            <ion-col cols-6>
+                <ion-item>
+                    <ion-icon color="danger" name="alert" item-start></ion-icon>
+                    Report Pending
+                    <ion-badge item-end>1,250</ion-badge>
+                </ion-item>
+            </ion-col>
+            <ion-col cols-6>
+                <ion-item>
+                    <ion-icon color="secondary" name="checkmark-circle-outline" item-start></ion-icon>
+                    Status
+                    <ion-badge item-end>1,250</ion-badge>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+<ion-footer>
+    <ion-slides class="slider-box" autoplay="5000" loop="true" speed="3000">
+        <ion-slide class="slider-cont">
+            <div class="image"><img src="../../assets/img/ecd/1.jpg"></div>
+            <!-- <div class="title">asdsadasd</div>
+            <div class="subtitle">asdsadsadas</div> -->
+        </ion-slide>
+        <ion-slide class="slider-cont">
+            <div><img src="../../assets/img/ecd/4.jpg"></div>
+            <!-- <div class="title">asdasdas</div>
+            <div class="subtitle">asdsadasdasdsadasd</div> -->
+        </ion-slide>
+        <ion-slide class="slider-cont">
+            <div class="image"><img src="../../assets/img/ecd/3.jpg"></div>
+            <!-- <div class="title">asdasdsadsa</div>
+            <div class="subtitle">sadsadsadsad</div> -->
+        </ion-slide>
+    </ion-slides>
+</ion-footer>

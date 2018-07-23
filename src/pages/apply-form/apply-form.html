@@ -1,0 +1,54 @@
+<!--
+  Generated template for the ApplyFormPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-title>
+            <span class="text">Form</span>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <form>
+        <ion-item>
+            <ion-label floating>
+                <ion-icon name="md-paper" item-start class="text-primary"></ion-icon>
+                Apply Type
+            </ion-label>
+            <ion-select name="type">
+                <ion-option value="1">Add Facility</ion-option>
+                <ion-option value="2">Get Faktur</ion-option>
+                <ion-option value="3">Close Merchant</ion-option>
+                <ion-option value="4">Change Rek</ion-option>
+                <ion-option value="5">Add EDC</ion-option>
+                <ion-option value="6">Remove EDC</ion-option>
+            </ion-select>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>
+                <ion-icon name="md-mail" item-start class="text-primary"></ion-icon>
+                Subject
+            </ion-label>
+            <ion-textarea type="subject"></ion-textarea>
+        </ion-item>
+    </form>
+
+</ion-content>
+<ion-footer>
+    <ion-grid>
+        <ion-row>
+            <ion-col cols-6>
+                <button ion-button icon-start block color="dark" tappable (click)="toSubmit()">
+                    <ion-icon name="md-list-box"></ion-icon>
+                    Apply
+                  </button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-footer>
