@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { TicketProvider } from '../../providers/ticket/ticket';
 
+import { TicketsPage } from '../../pages/tickets/tickets';
 /**
  * Generated class for the TicketsFormPage page.
  *
@@ -15,11 +17,25 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class TicketsFormPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  title:string='';
+  subtitle:string='';
+
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    public ticketProf: TicketProvider
+  ) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TicketsFormPage');
+  }
+
+  toSubmit(){
+    this.ticketProf.postAddticket('0001',this.title,this.subtitle).subscribe(Response =>{
+      console.log(Response);
+    });
+    this.navCtrl.setRoot(TicketsPage);
   }
 
 }

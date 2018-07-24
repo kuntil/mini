@@ -13,7 +13,17 @@
     </ion-navbar>
 </ion-header>
 <ion-content padding>
-    <ion-list class="row">
+    <ion-list class="row" *ngFor="let tick of ticket">
+        <ion-item class="col">
+            <ion-avatar item-start>
+                <img src="img/avatar-finn.png">
+            </ion-avatar>
+            <h3>{{tick.title}}</h3>
+            <p>{{tick.subtitle}}</p>
+            <button ion-button clear item-end (click)="toDetailticket(tick)">Detail</button>
+        </ion-item>
+    </ion-list>
+    <!-- <ion-list class="row">
         <ion-item class="col">
             <ion-avatar item-start>
                 <img src="img/avatar-finn.png">
@@ -32,17 +42,7 @@
             <p>Saya mengalami masalah pada mesin edc saya, mohon kirim teknisi ke tempat saya. trim's</p>
             <button ion-button clear item-end (click)="toDetailticket()">Detail</button>
         </ion-item>
-    </ion-list>
-    <ion-list class="row">
-        <ion-item class="col">
-            <ion-avatar item-start>
-                <img src="img/avatar-finn.png">
-            </ion-avatar>
-            <h3>EDC Problem</h3>
-            <p>Saya mengalami masalah pada mesin edc saya, mohon kirim teknisi ke tempat saya. trim's</p>
-            <button ion-button clear item-end (click)="toDetailticket()">Detail</button>
-        </ion-item>
-    </ion-list>
+    </ion-list> -->
 </ion-content>
 <ion-footer>
     <ion-grid>

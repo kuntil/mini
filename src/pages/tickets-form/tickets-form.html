@@ -19,10 +19,10 @@
                 <ion-icon name="md-paper" item-start class="text-primary"></ion-icon>
                 Apply Type
             </ion-label>
-            <ion-select name="type">
-                <ion-option value="1">EDC Rusak</ion-option>
-                <ion-option value="2">EDC Not Connection</ion-option>
-                <ion-option value="3">EDC Not Transaction</ion-option>
+            <ion-select [(ngModel)]="title" name="title">
+                <ion-option value="EDC Rusak">EDC Rusak</ion-option>
+                <ion-option value="EDC Not Connection">EDC Not Connection</ion-option>
+                <ion-option value="EDC Not Transaction">EDC Not Transaction</ion-option>
             </ion-select>
         </ion-item>
 
@@ -31,7 +31,7 @@
                 <ion-icon name="md-mail" item-start class="text-primary"></ion-icon>
                 Subject
             </ion-label>
-            <ion-textarea type="subject"></ion-textarea>
+            <ion-textarea [(ngModel)]="subtitle" name="subject"></ion-textarea>
         </ion-item>
     </form>
 </ion-content>
@@ -46,4 +46,4 @@
             </ion-col>
         </ion-row>
     </ion-grid>
-</ion-footer>
+</ion-footer>w

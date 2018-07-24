@@ -12,10 +12,13 @@ import 'rxjs/add/operator/map';
 export class TicketProvider {
 
   baseUrl = "";
-
+  ticket: any;
   constructor(public http: Http) {
     console.log('Hello TicketProvider Provider');
-  }
+    this.getAllticket().subscribe(Response=>{
+      this.ticket = Response.ticket;
+    });
+  } 
 
   getAllticket(){
     var headers = new Headers();
@@ -52,7 +55,7 @@ export class TicketProvider {
       subtitle:subtile
 		}
 
-		return this.http.post('https://minebca.herokuapp.com/addTicket',postParams,options).map(res=>res.json());
+		return this.http.post('https://minebca.herokuapp.com/addTicket/',postParams,options).map(res=>res.json());
 
   }
 

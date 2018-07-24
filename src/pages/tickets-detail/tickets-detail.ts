@@ -15,11 +15,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class TicketsDetailPage {
 
+  ticket:any;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.ticket = navParams.get('ticket');
+    console.log(this.ticket);
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad TicketsDetailPage');
+    this.ticket = this.navParams.get('ticket');
   }
 
 }

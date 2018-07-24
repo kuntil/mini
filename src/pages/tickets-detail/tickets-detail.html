@@ -11,7 +11,32 @@
         </ion-title>
     </ion-navbar>
 </ion-header>
-
 <ion-content padding>
-
+    <ion-card *ngFor="let tick of ticket">
+        <ion-card-content>
+            <ion-card-title>
+                {{tick.title}}
+            </ion-card-title>
+            <p>
+                {{tick.subtitle}}
+            </p>
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-content>
+            <p>Publish : 20/7/2018</p>
+        </ion-card-content>
+    </ion-card>
 </ion-content>
+<ion-footer>
+    <ion-grid>
+        <ion-row>
+            <ion-col cols-6>
+                <button ion-button icon-start block color="dark" tappable (click)="toCancel()">
+                    <ion-icon name="md-list-box"></ion-icon>
+                    Cancel
+                  </button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-footer>

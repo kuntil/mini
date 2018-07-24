@@ -4,6 +4,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import {TicketsFormPage} from "../tickets-form/tickets-form";
 import {TicketsDetailPage} from "../tickets-detail/tickets-detail";
+import {TicketProvider} from "../../providers/ticket/ticket";
 /**
  * Generated class for the TicketsPage page.
  *
@@ -18,15 +19,20 @@ import {TicketsDetailPage} from "../tickets-detail/tickets-detail";
 })
 export class TicketsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  ticket:any;
+  constructor(public navCtrl: NavController, public navParams: NavParams,public ticketProf: TicketProvider) {
+    this.ticket = this.ticketProf.getAllticket().subscribe(Response =>{
+      this.ticket = Response.ticket;
+    });
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad TicketsPage');
+  ionViewCanEnter(){
+    this.ticket = this.ticketProf.ticket;
+    // console.log(this.apply);
   }
 
-  toDetailticket(){
-    this.navCtrl.push(TicketsDetailPage);
+  toDetailticket(tick){
+    this.navCtrl.push(TicketsDetailPage,{ticket:tick});
   }
 
   toCreateTicket(){
