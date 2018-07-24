@@ -13,17 +13,17 @@
     </ion-navbar>
 </ion-header>
 <ion-content padding>
-    <ion-list class="row">
+    <ion-list class="row" *ngFor="let app of apply">
         <ion-item class="col">
             <ion-avatar item-start>
-                <img src="img/avatar-finn.png">
+                <ion-item name="mail"></ion-item>
             </ion-avatar>
-            <h3>Tambah Fasilitas</h3>
-            <p>Saya mengalami masalah pada mesin edc saya, mohon kirim teknisi ke tempat saya. trim's</p>
-            <button ion-button clear item-end (click)="toDetailApply()">Detail</button>
+            <h3>{{app.title}}</h3>
+            <p>{{app.subtitle}}</p>
+            <button ion-button clear item-end (click)="toDetailApply(app)">Detail</button>
         </ion-item>
     </ion-list>
-    <ion-list class="row">
+    <!-- <ion-list class="row">
         <ion-item class="col">
             <ion-avatar item-start>
                 <img src="img/avatar-finn.png">
@@ -52,7 +52,7 @@
             <p>Saya mengalami masalah pada mesin edc saya, mohon kirim teknisi ke tempat saya. trim's</p>
             <button ion-button clear item-end (click)="toDetailApply()">Detail</button>
         </ion-item>
-    </ion-list>
+    </ion-list> -->
 </ion-content>
 <ion-footer>
     <ion-grid>

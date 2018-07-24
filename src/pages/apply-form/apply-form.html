@@ -20,13 +20,13 @@
                 <ion-icon name="md-paper" item-start class="text-primary"></ion-icon>
                 Apply Type
             </ion-label>
-            <ion-select name="type">
-                <ion-option value="1">Add Facility</ion-option>
-                <ion-option value="2">Get Faktur</ion-option>
-                <ion-option value="3">Close Merchant</ion-option>
-                <ion-option value="4">Change Rek</ion-option>
-                <ion-option value="5">Add EDC</ion-option>
-                <ion-option value="6">Remove EDC</ion-option>
+            <ion-select [(ngModel)]='title' name='title'>
+                <ion-option value="Add Facality">Add Facility</ion-option>
+                <ion-option value="Get Faktur">Get Faktur</ion-option>
+                <ion-option value="Close Merchant">Close Merchant</ion-option>
+                <ion-option value="Change Rek">Change Rek</ion-option>
+                <ion-option value="Add EDC">Add EDC</ion-option>
+                <ion-option value="Remove EDC">Remove EDC</ion-option>
             </ion-select>
         </ion-item>
 
@@ -35,7 +35,7 @@
                 <ion-icon name="md-mail" item-start class="text-primary"></ion-icon>
                 Subject
             </ion-label>
-            <ion-textarea type="subject"></ion-textarea>
+            <ion-textarea [(ngModel)]="subtitle" name="title" type="subject"></ion-textarea>
         </ion-item>
     </form>
 

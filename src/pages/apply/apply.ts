@@ -4,6 +4,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ApplyFormPage } from '../apply-form/apply-form';
 import { ApplyDetailPage } from '../apply-detail/apply-detail';
 
+import { ApplyProvider } from "../../providers/apply/apply";
 /**
  * Generated class for the ApplyPage page.
  *
@@ -18,20 +19,28 @@ import { ApplyDetailPage } from '../apply-detail/apply-detail';
 })
 export class ApplyPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  apply: any;
+
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    public applyProf: ApplyProvider
+    ) {
+      this.apply = this.applyProf.getAllticket().subscribe(Response =>{
+        this.apply = Response.apply;
+      })
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ApplyPage');
+  ionViewCanEnter(){
+    this.apply = this.applyProf.apply;
+    // console.log(this.apply);
   }
 
   toCreateApply(){
     this.navCtrl.push(ApplyFormPage);
   }
 
-  toDetailApply(){
-    this.navCtrl.push(ApplyDetailPage);
+  toDetailApply(app:any){
+    this.navCtrl.push(ApplyDetailPage,{apply:app});
   }
-
-
 }

@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ApplyPage } from '../apply/apply';
 
+import { ApplyProvider } from '../../providers/apply/apply';
+
 /**
  * Generated class for the ApplyFormPage page.
  *
@@ -16,7 +18,15 @@ import { ApplyPage } from '../apply/apply';
 })
 export class ApplyFormPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  apply: any;
+  title: string = '';
+  subtitle: string = '';
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    public applyProf: ApplyProvider
+    ) {
+    
   }
 
   ionViewDidLoad() {
@@ -24,6 +34,10 @@ export class ApplyFormPage {
   }
 
   toSubmit(){
+    console.log(this.subtitle)
+    this.applyProf.postAddticket('0001',this.title,this.subtitle).subscribe(Response =>{
+      console.log(Response);
+    });
     this.navCtrl.setRoot(ApplyPage);
   }
 

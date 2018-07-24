@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
 /**
  * Generated class for the ApplyDetailPage page.
@@ -8,18 +8,22 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+// @IonicPage()
 @Component({
   selector: 'page-apply-detail',
   templateUrl: 'apply-detail.html',
 })
 export class ApplyDetailPage {
 
+  apply:any;
+  
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.apply = navParams.get('apply');
+    console.log(this.apply);
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ApplyDetailPage');
+    this.apply = this.navParams.get('apply');
   }
 
 }

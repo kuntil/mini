@@ -3,6 +3,7 @@ import {IonicApp, IonicModule} from "ionic-angular";
 import {BrowserModule} from '@angular/platform-browser';
 import {HttpClientModule} from '@angular/common/http';
 import {IonicStorageModule} from '@ionic/storage';
+import {HttpModule} from '@angular/http';
 
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
@@ -35,8 +36,8 @@ import {ApplyPage} from "../pages/apply/apply";
 import {ApplyFormPage} from "../pages/apply-form/apply-form";
 import {ApplyDetailPage} from "../pages/apply-detail/apply-detail";
 import {ProfilePage} from "../pages/profile/profile";
-import { TicketProvider } from '../providers/ticket/ticket';
-import { ApplyProvider } from '../providers/apply/apply';
+import {TicketProvider } from '../providers/ticket/ticket';
+import {ApplyProvider } from '../providers/apply/apply';
 
 // import services
 // end import services
@@ -73,6 +74,7 @@ import { ApplyProvider } from '../providers/apply/apply';
   imports: [
     BrowserModule,
     HttpClientModule,
+    HttpModule,
     IonicModule.forRoot(MyApp, {
       scrollPadding: false,
       scrollAssist: true,
