@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
 import { ApplyFormPage } from '../apply-form/apply-form';
 import { ApplyDetailPage } from '../apply-detail/apply-detail';
@@ -12,7 +12,6 @@ import { ApplyProvider } from "../../providers/apply/apply";
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-apply',
   templateUrl: 'apply.html',
